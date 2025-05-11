@@ -1,0 +1,210 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/BasketService.API.csproj": {}
+  },
+  "projects": {
+    "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/BasketService.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/BasketService.API.csproj",
+        "projectName": "BasketService.API",
+        "projectPath": "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/BasketService.API.csproj",
+        "packagesPath": "/Users/michalpozdal/.nuget/packages/",
+        "outputPath": "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/michalpozdal/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Infrastructure/BasketService.Infrastructure.csproj": {
+                "projectPath": "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Infrastructure/BasketService.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.5.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/BasketService.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/BasketService.Domain.csproj",
+        "projectName": "BasketService.Domain",
+        "projectPath": "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/BasketService.Domain.csproj",
+        "packagesPath": "/Users/michalpozdal/.nuget/packages/",
+        "outputPath": "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/michalpozdal/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Infrastructure/BasketService.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Infrastructure/BasketService.Infrastructure.csproj",
+        "projectName": "BasketService.Infrastructure",
+        "projectPath": "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Infrastructure/BasketService.Infrastructure.csproj",
+        "packagesPath": "/Users/michalpozdal/.nuget/packages/",
+        "outputPath": "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/michalpozdal/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/BasketService.Domain.csproj": {
+                "projectPath": "/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/BasketService.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "EventStore.Client": {
+              "target": "Package",
+              "version": "[22.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[10.0.0-preview.3.25171.5, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[10.0.0-preview.3.25171.5, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[10.0.0-preview.3.25171.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

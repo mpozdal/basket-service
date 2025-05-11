@@ -1,0 +1,12 @@
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/bin/Debug/net8.0/BasketService.Domain.deps.json
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/bin/Debug/net8.0/BasketService.Domain.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/bin/Debug/net8.0/BasketService.Domain.pdb
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/obj/Debug/net8.0/BasketService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/obj/Debug/net8.0/BasketService.Domain.AssemblyInfoInputs.cache
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/obj/Debug/net8.0/BasketService.Domain.AssemblyInfo.cs
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/obj/Debug/net8.0/BasketService.Domain.csproj.CoreCompileInputs.cache
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/obj/Debug/net8.0/BasketService.Domain.sourcelink.json
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/obj/Debug/net8.0/BasketService.Domain.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/obj/Debug/net8.0/refint/BasketService.Domain.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/obj/Debug/net8.0/BasketService.Domain.pdb
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/obj/Debug/net8.0/ref/BasketService.Domain.dll
