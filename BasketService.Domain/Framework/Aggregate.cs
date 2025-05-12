@@ -3,8 +3,8 @@ namespace BasketService.Domain.Framework;
 public abstract class Aggregate
 {
     readonly IList<object> _changes = new List<object>();
-    public Guid Id { get; protected set; } = Guid.NewGuid();
-    public long Version { get; protected set; } = -1;
+    public Guid Id { get; protected set; }
+    public static long Version { get; protected set; } = -1;
     protected abstract void When(object @event);
 
     public void Apply(object @event)
@@ -23,4 +23,6 @@ public abstract class Aggregate
     }
     
     public object[] GetChanges() => _changes.ToArray();
+    public void ClearChanges() => _changes.Clear();
+
 }

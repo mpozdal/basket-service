@@ -8,12 +8,15 @@
 
     <ItemGroup>
       <PackageReference Include="EventStore.Client" Version="22.0.0" />
+      <PackageReference Include="EventStore.Client.Grpc" Version="23.3.8" />
+      <PackageReference Include="EventStore.Client.Grpc.Streams" Version="23.3.8" />
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.0-preview.3.25171.5" />
       <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.0-preview.3.25171.5" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0-preview.3.25171.5" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\BasketService.Application\BasketService.Application.csproj" />
       <ProjectReference Include="..\BasketService.Domain\BasketService.Domain.csproj" />
     </ItemGroup>
 

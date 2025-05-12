@@ -1,67 +1,91 @@
 using System.Text;
 using System.Text.Json;
+using BasketService.Application.Interfaces;
 using BasketService.Domain.Framework;
-using EventStore.ClientAPI;
+using EventStore.Client;
 
 namespace BasketService.Infrastructure.Repositories;
 
-public class AggregateRepository
+public class AggregateRepository : IAggregateRepository
 {
-    private readonly IEventStoreConnection _eventStore;
+    private readonly EventStoreClient _eventStore;
 
-    public AggregateRepository(IEventStoreConnection eventStore)
+    public AggregateRepository(EventStoreClient eventStore)
     {
         _eventStore = eventStore;
     }
 
-    public async Task SaveAsync<T>(T aggregate) where T : Aggregate, new()
+    public async Task SaveAsync<T>(T aggregate) where T : Aggregate
     {
         var events = aggregate.GetChanges()
-            .Select(@event => new EventData(
-                Guid.NewGuid(),
-                @event.GetType().Name,
-                true,
-                Encoding.UTF8.GetBytes(JsonSerializer.Serialize(@event)),
-                Encoding.UTF8.GetBytes(@event.GetType().FullName)))
+            .Select(@event =>
+                new EventData(
+                    Uuid.NewUuid(),
+                    @event.GetType().Name,
+                    JsonSerializer.SerializeToUtf8Bytes(@event),
+                    Encoding.UTF8.GetBytes(@event.GetType().AssemblyQualifiedName!)
+
+                )
+            )
             .ToArray();
 
-        if(!events.Any())
-        {
+        if (!events.Any())
             return;
-        }
+
         var streamName = GetStreamName(aggregate, aggregate.Id);
-        
-        var result = await _eventStore.AppendToStreamAsync(streamName, ExpectedVersion.Any, events);
+
+        await _eventStore.AppendToStreamAsync(
+            streamName,
+            StreamState.Any,
+            events
+        );
     }
 
     public async Task<T> LoadAsync<T>(Guid aggregateId) where T : Aggregate, new()
     {
-        if(aggregateId == Guid.Empty)
+        if (aggregateId == Guid.Empty)
             throw new ArgumentNullException(nameof(aggregateId));
+
         var aggregate = new T();
-        
         var streamName = GetStreamName(aggregate, aggregateId);
-        var nextPageStart = 0L;
+        var events = new List<object>();
 
-        do
+        var result = _eventStore.ReadStreamAsync(
+            Direction.Forwards,
+            streamName,
+            StreamPosition.Start
+        );
+
+        await foreach (var resolvedEvent in result)
         {
-            var page = await _eventStore.ReadStreamEventsForwardAsync(
-                streamName, nextPageStart, 4096, false);
-            if (page.Events.Length > 0)
-            {
-                aggregate.Load(page.Events.Last().Event.EventNumber,
-                    page.Events.Select(@event =>
-                        JsonSerializer.Deserialize(Encoding.UTF8.GetString(@event.OriginalEvent.Data),
-                            Type.GetType(Encoding.UTF8.GetString(@event.OriginalEvent.Metadata)))).ToArray());
+            var metadata = Encoding.UTF8.GetString(resolvedEvent.Event.Metadata.ToArray()).Trim('"');
+            
+            var eventType = Type.GetType(metadata);
 
-            }
+            if (eventType is null)
+                throw new InvalidOperationException($"Cannot resolve type: {metadata}");
 
-            nextPageStart = !page.IsEndOfStream ? page.NextEventNumber : -1;
-        } while (nextPageStart != -1);
+
+            var data = JsonSerializer.Deserialize(
+                resolvedEvent.Event.Data.Span,
+                eventType
+            );
+
+            if (data is not null)
+                events.Add(data);
+        }
+
+        if (events.Count > 0)
+        {
+            aggregate.Load(
+                (long)events.Count - 1,
+                events.ToArray()
+            );
+        }
 
         return aggregate;
     }
-    
-    private string GetStreamName<T>(T type, Guid aggregateId) => $"{type.GetType().Name}-{aggregateId}";
 
+    private string GetStreamName<T>(T type, Guid aggregateId) =>
+        $"{type.GetType().Name}-{aggregateId}";
 }

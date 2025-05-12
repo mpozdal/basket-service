@@ -48,3 +48,16 @@
 /Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/obj/Debug/net8.0/BasketService.API.pdb
 /Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/obj/Debug/net8.0/BasketService.API.genruntimeconfig.cache
 /Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/obj/Debug/net8.0/ref/BasketService.API.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/bin/Debug/net8.0/BasketService.Application.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/bin/Debug/net8.0/BasketService.Application.pdb
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/bin/Debug/net8.0/EventStore.Client.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/bin/Debug/net8.0/EventStore.Client.Streams.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/bin/Debug/net8.0/Google.Protobuf.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/bin/Debug/net8.0/Grpc.Core.Api.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/bin/Debug/net8.0/Grpc.Net.Client.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/bin/Debug/net8.0/Grpc.Net.Common.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/bin/Debug/net8.0/JetBrains.Annotations.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/bin/Debug/net8.0/System.Linq.Async.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.API/bin/Debug/net8.0/System.Text.Json.dll

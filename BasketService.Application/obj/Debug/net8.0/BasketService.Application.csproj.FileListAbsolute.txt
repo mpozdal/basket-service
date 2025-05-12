@@ -1,0 +1,16 @@
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/bin/Debug/net8.0/BasketService.Application.deps.json
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/bin/Debug/net8.0/BasketService.Application.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/bin/Debug/net8.0/BasketService.Application.pdb
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/bin/Debug/net8.0/BasketService.Domain.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/bin/Debug/net8.0/BasketService.Domain.pdb
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/obj/Debug/net8.0/BasketService.Application.csproj.AssemblyReference.cache
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/obj/Debug/net8.0/BasketService.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/obj/Debug/net8.0/BasketService.Application.AssemblyInfoInputs.cache
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/obj/Debug/net8.0/BasketService.Application.AssemblyInfo.cs
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/obj/Debug/net8.0/BasketService.Application.csproj.CoreCompileInputs.cache
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/obj/Debug/net8.0/BasketService.Application.sourcelink.json
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/obj/Debug/net8.0/BasketService.Application.csproj.CopyComplete
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/obj/Debug/net8.0/BasketService.Application.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/obj/Debug/net8.0/refint/BasketService.Application.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/obj/Debug/net8.0/BasketService.Application.pdb
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Application/obj/Debug/net8.0/ref/BasketService.Application.dll

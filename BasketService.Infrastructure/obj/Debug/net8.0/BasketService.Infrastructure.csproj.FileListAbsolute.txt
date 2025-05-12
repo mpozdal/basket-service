@@ -14,3 +14,5 @@
 /Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Infrastructure/obj/Debug/net8.0/refint/BasketService.Infrastructure.dll
 /Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Infrastructure/obj/Debug/net8.0/BasketService.Infrastructure.pdb
 /Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Infrastructure/obj/Debug/net8.0/ref/BasketService.Infrastructure.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Infrastructure/bin/Debug/net8.0/BasketService.Application.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Infrastructure/bin/Debug/net8.0/BasketService.Application.pdb
