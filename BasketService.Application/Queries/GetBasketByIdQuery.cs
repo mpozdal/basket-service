@@ -4,7 +4,7 @@ using MediatR;
 
 namespace BasketService.Application.Queries;
 
-public class GetBasketByIdQuery: IRequest<Basket>
+public class GetBasketByIdQuery: IRequest<Basket?>
 {
     public Guid UserId { get; set; }
 
@@ -14,7 +14,7 @@ public class GetBasketByIdQuery: IRequest<Basket>
     }
 }
 
-public class GetBasketByIdHandler : IRequestHandler<GetBasketByIdQuery, Basket>
+public class GetBasketByIdHandler : IRequestHandler<GetBasketByIdQuery, Basket?>
 {
     private readonly IAggregateRepository _repository;
 

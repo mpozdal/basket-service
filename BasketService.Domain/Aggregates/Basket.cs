@@ -8,6 +8,7 @@ public class Basket: Aggregate
 {
     private readonly List<ProductItem> _items = new();
     public bool IsFinalized { get; private set; }
+    public decimal TotalPrice { get; private set; }
 
     public IReadOnlyCollection<ProductItem> Items => _items.AsReadOnly();
     
@@ -22,12 +23,13 @@ public class Basket: Aggregate
         basket.Apply(new BasketCreated(userId));
         return basket;
     }
-    public void AddProduct(Guid productId, int quantity)
+    public void AddProduct(Guid productId, int quantity, decimal price)
     {
         if (IsFinalized)
             throw new InvalidOperationException("Basket is finalized.");
-
-        Apply(new ProductAddedToBasket(Id, productId, quantity));
+        
+        
+        Apply(new ProductAddedToBasket(Id, productId, quantity, price));
     }
     public void RemoveProduct(Guid productId, int quantity)
     {
@@ -60,10 +62,12 @@ public class Basket: Aggregate
                 if (existing != null)
                 {
                     existing.IncreaseQuantity(e.Quantity);
+                    TotalPrice += e.Quantity * e.Price;
                 }
                 else
                 {
-                    _items.Add(new ProductItem(e.ProductId, e.Quantity));
+                    _items.Add(new ProductItem(e.ProductId, e.Quantity, e.Price));
+                    TotalPrice += e.Quantity * e.Price;
                 }
                 break;
 
@@ -77,6 +81,7 @@ public class Basket: Aggregate
                 {
                     _items.RemoveAll(i => i.ProductId == e.ProductId);
                 }
+                TotalPrice -= existingToRemove.Price * e.quantity;
                 
                 break;
 

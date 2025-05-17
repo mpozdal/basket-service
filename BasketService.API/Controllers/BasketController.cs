@@ -26,9 +26,9 @@ public class BasketController: ControllerBase
     [HttpPost("{userId}/add")]
     public async Task<IActionResult> AddProduct(Guid userId, [FromBody] AddProductDto request)
     {
-        await _mediator.Send(new AddProductCommand
+        var productId = await _mediator.Send(new AddProductCommand
             { UserId = userId, ProductId = request.ProductId, Quantity = request.Quantity });
-        return Ok();
+        return Ok(productId);
     }
     
     [HttpPost("{userId}/remove")]
@@ -46,8 +46,12 @@ public class BasketController: ControllerBase
     [HttpGet("{userId}")]
     public async Task<IActionResult> GetBasket(Guid userId)
     {
-        var result = await _mediator.Send(new GetBasketByIdQuery(userId));
-        return Ok(result);
+        var basket = await _mediator.Send(new GetBasketByIdQuery(userId));
+        if (basket is null)
+        {
+            return NotFound();
+        }
+        return Ok(basket);
     }
     
     
