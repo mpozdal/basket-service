@@ -10,3 +10,4 @@
 /Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/obj/Debug/net8.0/refint/BasketService.Domain.dll
 /Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/obj/Debug/net8.0/BasketService.Domain.pdb
 /Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/obj/Debug/net8.0/ref/BasketService.Domain.dll
+/Users/michalpozdal/Desktop/studia/mgr/1sem/ztp/BasketService/BasketService.Domain/obj/Debug/net8.0/BasketService.Domain.csproj.AssemblyReference.cache

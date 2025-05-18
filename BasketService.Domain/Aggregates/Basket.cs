@@ -12,6 +12,8 @@ public class Basket: Aggregate
 
     public IReadOnlyCollection<ProductItem> Items => _items.AsReadOnly();
     
+    public DateTime LastActivityAt { get; private set; }
+    public static readonly TimeSpan ReservationTTL = TimeSpan.FromMinutes(15);
     public Basket() { }
     public static Basket Create(Guid userId)
     {
@@ -22,6 +24,12 @@ public class Basket: Aggregate
         var basket = new Basket();
         basket.Apply(new BasketCreated(userId));
         return basket;
+    }
+    public bool IsExpired() => DateTime.UtcNow - LastActivityAt > ReservationTTL;
+
+    public void RefreshTimer()
+    {
+       Apply(new BasketRefreshed(DateTime.UtcNow));
     }
     public void AddProduct(Guid productId, int quantity, decimal price)
     {
@@ -59,20 +67,23 @@ public class Basket: Aggregate
 
             case ProductAddedToBasket e:
                 var existing = _items.FirstOrDefault(i => i.ProductId == e.ProductId);
+                LastActivityAt = DateTime.UtcNow;
                 if (existing != null)
                 {
                     existing.IncreaseQuantity(e.Quantity);
-                    TotalPrice += e.Quantity * e.Price;
                 }
                 else
                 {
                     _items.Add(new ProductItem(e.ProductId, e.Quantity, e.Price));
-                    TotalPrice += e.Quantity * e.Price;
                 }
+                
                 break;
 
             case ProductRemovedFromBasket e:
-                var existingToRemove = _items.FirstOrDefault(i => i.ProductId == e.ProductId);
+                var existingToRemove =  _items.FirstOrDefault(i => i.ProductId == e.ProductId);
+                if(existingToRemove == null)
+                    break;
+                LastActivityAt = DateTime.UtcNow;
                 if (existingToRemove.Quantity > e.quantity)
                 {
                     existingToRemove.DecreaseQuantity(e.quantity);
@@ -81,10 +92,11 @@ public class Basket: Aggregate
                 {
                     _items.RemoveAll(i => i.ProductId == e.ProductId);
                 }
-                TotalPrice -= existingToRemove.Price * e.quantity;
                 
                 break;
-
+            case BasketRefreshed:
+                LastActivityAt = DateTime.UtcNow;
+                break;
             case BasketFinalized _:
                 IsFinalized = true;
                 break;

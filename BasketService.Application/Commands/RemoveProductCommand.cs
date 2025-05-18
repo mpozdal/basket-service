@@ -38,6 +38,12 @@ public class RemoveProductCommandHandler : IRequestHandler<RemoveProductCommand,
                 throw new Exception("Product has not been released.");
 
             var basket = await _repository.LoadAsync<Basket>(request.UserId);
+            if (basket.IsFinalized)
+                throw new InvalidOperationException("Basket is finalized");
+
+            if (basket.IsExpired())
+                throw new InvalidOperationException("Basket expired");
+            basket.RefreshTimer();
             basket.RemoveProduct(request.ProductId, request.Quantity);
             await _repository.SaveAsync(basket);
 

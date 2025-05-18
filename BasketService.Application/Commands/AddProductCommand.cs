@@ -1,6 +1,7 @@
 using BasketService.Application.DTOs;
 using BasketService.Application.Interfaces;
 using BasketService.Domain.Aggregates;
+using BasketService.Domain.Entities;
 using MediatR;
 
 namespace BasketService.Application.Commands;
@@ -15,11 +16,13 @@ public class AddProductCommandHandler : IRequestHandler<AddProductCommand, Produ
 {
     private readonly IAggregateRepository _repository;
     private readonly IProductServiceClient _productServiceClient;
+    private readonly IReservationRepository _reservationRepository;
     
-    public AddProductCommandHandler(IAggregateRepository repository, IProductServiceClient productServiceClient)
+    public AddProductCommandHandler(IAggregateRepository repository, IProductServiceClient productServiceClient, IReservationRepository reservationRepository)
     {
         _repository = repository;
         _productServiceClient = productServiceClient;
+        _reservationRepository = reservationRepository;
     }
         
     public async Task<ProductItemDto?> Handle(AddProductCommand request, CancellationToken cancellationToken)
@@ -37,8 +40,14 @@ public class AddProductCommandHandler : IRequestHandler<AddProductCommand, Produ
             {
                 throw new Exception("Reservation failed");
             }
-
+            
             var basket = await _repository.LoadAsync<Basket>(request.UserId);
+            if (basket.IsFinalized)
+                throw new InvalidOperationException("Basket is finalized");
+
+            if (basket.IsExpired())
+                throw new InvalidOperationException("Basket expired");
+            basket.RefreshTimer();
             basket.AddProduct(product.Id, request.Quantity,  product.Price);
             await _repository.SaveAsync(basket);
             return product;
