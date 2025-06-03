@@ -17,6 +17,7 @@ public static class DependencyInjection
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
         services.AddTransient<IAggregateRepository, AggregateRepository>();
         services.AddHostedService<BasketCleanupWorker>();
+        services.AddScoped<IReservationRepository, ReservationRepository>();
         return services;
     }
 
